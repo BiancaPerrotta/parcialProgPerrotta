@@ -44,24 +44,24 @@ Se puede enviar una REQUEST a traves de POSTMAN para probar los endpoints.
   Colocar como URL: https://parcialprogperrotta.onrender.com/mutant para crear una nueva cadena de ADNS...
   En el apartado de "Body", ir a la opción RAW y colocar un JSON. Presionar "SEND".
 
-### 2. RENDER 
+## 2. RENDER 
 El proyecto ha sido desplegado en Render (plataforma de hosting en la nube), puede ser accedido mediante el siguiente enlace:
 https://parcialprogperrotta.onrender.com
 
-### 3. Ejecución Local
-- Clonar el repositorio con el siguiente comando ->
+## 3. Ejecución Local
+### Clonar el repositorio con el siguiente comando ->
   git clone https://github.com/BiancaPerrotta/parcialProgPerrotta.git
   cd parcialProgPerrotta
 
-- Para ejecutar el proyecto ingrese el siguiente comando -> ./gradlew bootRun
+### Para ejecutar el proyecto ingrese el siguiente comando -> ./gradlew bootRun
 
-- Acceso a la API: http://localhost:8080 (puerto 8080)
-- Consola H2: http://localhost:8080/h2-console
+### Acceso a la API: http://localhost:8080 (puerto 8080)
+### Consola H2: http://localhost:8080/h2-console
 JDBC URL: jdbc:h2:~/test/mutantes
 Usuario: sa
 Contraseña: 123123
 
-- Una vez ingresamos, podemos realizas request a traves de POSTMAN con las respectivas URL´s
+### Una vez ingresamos, podemos realizas request a traves de POSTMAN con las respectivas URL´s
    Mutant -> http://localhost:8080/mutant...
    Stats -> http://localhost:8080/stats...
 
