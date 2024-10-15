@@ -16,111 +16,41 @@ Las filas de la matriz se ingresarán por teclado.
 
 - Una entrada típica sería algo como: `'ATCGTA'` 
 
-## Instrucciones de ejecución
-
-### Tecnologías Implementadas:
+## Tecnologías Implementadas:
 Java 17
 Spring Boot
 H2 Console
 JPA
 Postman
 Render 
-Swagger
 
-### RENDER 
+## Instrucciones de ejecución
+## 1. POSTMAN
+Se puede enviar una REQUEST a traves de POSTMAN para probar los endpoints.
+
+### Endpoint -> /"stats"
+- GET:
+  Colocar como URL: https://parcialprogperrotta.onrender.com/stats/list y presionar SEND para acceder a la lista de estadisticas
+- GET seguido del ID:
+  Colocar como URL: https://parcialprogperrotta.onrender.com/stats/list/ID y presionar SEND para acceder a la estadistica buscada por ID
+### Endpoint -> /"mutant"
+- GET:
+  Colocar como URL: https://parcialprogperrotta.onrender.com/mutant/list y presionar SEND para acceder a la lista de ADNS cargados
+- GET:
+  Colocar como URL: https://parcialprogperrotta.onrender.com/mutant/detail/ID y presionar SEND para acceder a los datos detallados de un ADN especifico por ID
+- GET:
+  Colocar como URL: https://parcialprogperrotta.onrender.com/mutant/short/ID y presionar SEND para acceder a una version resumida de los datos de un ADN especifico por ID
+- POST:
+  Colocar como URL: https://parcialprogperrotta.onrender.com/mutant para crear una nueva cadena de ADNS...
+  En el apartado de "Body", ir a la opción RAW y colocar un JSON. Presionar "SEND".
+
+### 2. RENDER 
 El proyecto ha sido desplegado en Render (plataforma de hosting en la nube), puede ser accedido mediante el siguiente enlace:
 https://parcialprogperrotta.onrender.com
 
-#### /mutant
-
-- **POST** /mutant - Recibe un JSON con la matriz de ADN a verificar. Ejemplo:
-
-```json
-{
-  "dna": [
-  "ATGCCA",
-  "CCTGTA",
-  "CCCCTA",
-  "AGTAAG",
-  "CCTGAC",
-  "TTAACG"
-]
-}
-
-```
-- **GET** /mutant/list - Devuelve un JSON con todos los ADN verificados. Ejemplo:
-
-```json
-[
-  {
-    "id": 1,
-    "dna": [
-      "ATGCCA",
-      "CCTGTA",
-      "CCCCTA",
-      "AGTAAG",
-      "CCTGAC",
-      "TTAACG"
-    ],
-    "isMutant": false
-  }
-]
-
-```
-- **GET** /mutant/detail/{id} - Devuelve un JSON con todos los datos del id especificado. Ejemplo:
-
-```json
-{
-  "dna": [
-    "ATGCCA",
-    "CCTGTA",
-    "CCCCTA",
-    "AGTAAG",
-    "CCTGAC",
-    "TTAACG"
-  ],
-  "isMutant": false,
-  "id": 1
-}
-```
-- **GET** /mutant/short/{id} - Devuelve un JSON con **SOLO** el ADN del id especificado. Ejemplo:
-
-```json
-{
-  "dna": [
-    "ATGCCA",
-    "CCTGTA",
-    "CCCCTA",
-    "AGTAAG",
-    "CCTGAC",
-    "TTAACG"
-  ]
-}
-```
-
-#### /stats
-
-- **GET** /stats/list - Devuelve un JSON todas las estadisticas de todos los ADN verificados. Ejemplo:
-
-```json
-[
-  {
-    "id": 1,
-    "countMutantDNA": 1,
-    "countHumanDNA": 53,
-    "ratio": 0.018518518518518517
-  }
-]
-```
-- **GET** /stats/list/{id} - Devuelve un JSON todas las stats del ADN especificado. Ejemplo:
-
-```json
-{
-  "countMutantDNA": 1,
-  "countHumanDNA": 53,
-  "ratio": 0.018518518518518517
-}
-```
 ## Pruebas Unitarias
-
 Se incluyen casos de pruebas contemplando los errores de ingreso como las verificaciones con ADN tanto cortos como largos.
+
+## Diagrama de Secuencia
+![Captura de pantalla 2024-10-14 220048](https://github.com/user-attachments/assets/841d7a21-0599-4799-bf45-4e1e16f9828b)
+
